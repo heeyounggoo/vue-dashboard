@@ -1,6 +1,14 @@
 <template>
-  <el-main class="register">
-    <el-form ref="form" :model="form" label-width="120px">
+  <div class="main register">
+    <div v-if="!modifyYn" class="top">
+      <h2 class="tit">Register</h2>
+      <p class="sub">게시판 등록페이지입니다. 원하는 정보를 입력해주세요.</p>
+    </div>
+    <div v-else class="top">
+      <h2 class="tit">{{form.title}}</h2>
+      <p class="sub">게시판 수정페이지입니다. 원하는 정보로 수정하세요.</p>
+    </div>
+    <el-form ref="form" :model="form" label-width="100px">
       <el-form-item label="제목">
         <el-input v-model="form.title"></el-input>
       </el-form-item>
@@ -31,11 +39,11 @@
     </el-form>
 
     <div class="btnBottom">
-      <el-button type="info" v-if="!modifyYn" @click="onSubmit">등록</el-button>
-      <el-button type="info" v-else @click="onModify">수정</el-button>
-      <el-button type="info" plain @click="onCancel">취소</el-button>
+      <el-button type="primary" round v-if="!modifyYn" @click="onSubmit">등록하기</el-button>
+      <el-button type="primary" round v-else @click="onModify">수정하기</el-button>
+      <el-button round plain @click="onCancel">취소하기</el-button>
     </div>
-  </el-main>
+  </div>
 </template>
 
 <script>

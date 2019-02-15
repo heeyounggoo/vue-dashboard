@@ -1,50 +1,34 @@
 <template>
-  <div class="navi">
-    <el-aside width="200px" >
-      <el-menu 
-        class="el-menu-vertical-demo" 
-        background-color="#545c64"
-        text-color="#fff"
-        :router="true">
-        <el-submenu index="1">
-          <template slot="title"><i class="el-icon-menu"></i>HOME</template>
-          <el-menu-item-group>
-            <el-menu-item index="1-1">Navigation01</el-menu-item>
-            <el-menu-item index="1-2">Navigation01</el-menu-item>
-            <el-menu-item index="1-3">Navigation01</el-menu-item>
-            <el-menu-item index="1-4">Navigation01</el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
-        <!-- <el-submenu index="2">
-          <template slot="title"><i class="el-icon-edit"></i>TABLE</template>
-          <el-menu-item-group>
-            <el-menu-item index="2-1" :route="{name: 'TableRegister'}">TableRegister</el-menu-item>
-            <el-menu-item index="2-2">Navigation02</el-menu-item>
-            <el-menu-item index="2-3">Navigation02</el-menu-item>
-            <el-menu-item index="2-4">Navigation02</el-menu-item>
-          </el-menu-item-group>
-        </el-submenu> -->
-        <el-menu-item index="2" :route="{name: 'TableList'}"><i class="el-icon-edit"></i>TABLE</el-menu-item>
-        <el-submenu index="3">
-          <template slot="title"><i class="el-icon-message"></i>Navigation</template>
-          <el-menu-item-group>
-            <el-menu-item index="3-1">Navigation03</el-menu-item>
-            <el-menu-item index="3-2">Navigation03</el-menu-item>
-            <el-menu-item index="3-3">Navigation03</el-menu-item>
-            <el-menu-item index="3-4">Navigation03</el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
-        <el-submenu index="4">
-          <template slot="title"><i class="el-icon-message"></i>Navigation</template>
-          <el-menu-item-group>
-            <el-menu-item index="4-1">Navigation04</el-menu-item>
-            <el-menu-item index="4-2">Navigation04</el-menu-item>
-            <el-menu-item index="4-3">Navigation04</el-menu-item>
-            <el-menu-item index="4-4">Navigation04</el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
-      </el-menu>
-    </el-aside>
+  <div class="sideNavi">
+    <div class="logo">
+      Dashboard
+      <span class="round">v.1.0</span>
+    </div>
+    <el-menu 
+      class="el-menu-vertical-demo" 
+      :router="true">
+      <!-- <el-menu-item class="logo">920</el-menu-item> -->
+      <el-menu-item index="1"><i class="el-icon-menu"></i>HOME</el-menu-item>
+      <el-menu-item index="2" :route="{name: 'TableList'}"><i class="el-icon-edit"></i>TABLE</el-menu-item>
+      <el-submenu index="3">
+        <template slot="title"><i class="el-icon-message"></i>Me</template>
+        <el-menu-item-group>
+          <el-menu-item index="3-1">Navigation03</el-menu-item>
+          <el-menu-item index="3-2">Navigation03</el-menu-item>
+          <el-menu-item index="3-3">Navigation03</el-menu-item>
+          <el-menu-item index="3-4">Navigation03</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
+      <el-submenu index="4">
+        <template slot="title"><i class="el-icon-message"></i>Navigation</template>
+        <el-menu-item-group>
+          <el-menu-item index="4-1">Navigation04</el-menu-item>
+          <el-menu-item index="4-2">Navigation04</el-menu-item>
+          <el-menu-item index="4-3">Navigation04</el-menu-item>
+          <el-menu-item index="4-4">Navigation04</el-menu-item>
+        </el-menu-item-group>
+      </el-submenu>
+    </el-menu>
   </div>
 </template>
 
@@ -52,6 +36,6 @@
 import '@/style/Navigation.scss'
 
 export default {
-  name: 'side-navi'
+  name: 'side-navi',
 }
 </script>

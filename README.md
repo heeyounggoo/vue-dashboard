@@ -1,6 +1,7 @@
 # dashboard
 
-> A Vue.js project
+> Vue.js로 구현한 Dashboard 페이지 입니다.
+기본적인 게시판 기능이 담겨져 있습니다.
 
 ## Build Setup
 

@@ -1,17 +1,58 @@
 //SideNavi
-.el-aside {
-  height: 100vh;
-  background: #545c64;
-  text-align: left;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.sideNavi {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    // background-color: #409EFF;
   .el-menu {
     border: 0;
+    // i {
+    //   color: #fff
+    // }
+  }
+  .logo {
+    background-color: #409EFF;
+    height: 56px;
+    line-height: 56px;
+    padding: 0 20px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    .round {
+      font-size: 0.5rem;
+      font-weight: 400;
+      padding: 5px 15px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
   }
 }
 
 //Navi
 .el-header {
+  position: fixed;
+  top: 0;
+  right: 0;
   line-height: 60px;
-  width: 100%;
+  width: calc(100% - 200px);
   text-align: right;
-  border-bottom: 1px solid #f4f4f4;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  background: #fff;
+  // border-bottom: 1px solid #EBEEF5;
+  .userName {
+    font-weight: bold;
+    i {
+      margin-left: 15px;
+    }
+  }
 }

@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <el-container>
+    <div class="app-wrapper">
       <side-navi></side-navi>
-      <el-container>
+      <div class="container">
         <navi></navi>
-        <router-view/>
-      </el-container>
-    </el-container>
+        <section class="app-main">
+          <router-view/>
+        </section>
+      </div>
+    </div>
   </div>
 </template>
 

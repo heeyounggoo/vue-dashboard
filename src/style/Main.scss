@@ -1,22 +1,69 @@
-//Table
-.el-main {
-  position: fixed;
-  top: 60px;
-  width: calc(100% - 200px);
-  .el-form {
-    margin-top: 2rem;
-    margin-right: 2rem;
-    .line {
-      text-align: center;
+// //Table Common
+// .el-main {
+//   position: fixed;
+//   top: 60px;
+//   width: calc(100% - 200px);
+//   .top {
+//     margin-bottom: 2rem;
+//     .tit {
+//       font-size: 2rem;
+//       color: #409EFF;
+//       margin-bottom: 1rem;
+//     }
+//     .sub {
+//       color: #909399;
+//     }
+//   }
+//   .el-form {
+//     margin-top: 2rem;
+//     margin-right: 2rem;
+//     .line {
+//       text-align: center;
+//     }
+//   }
+//   .btnBottom {
+//     text-align: center;
+//     margin-top: 3rem;
+//   }
+// }
+
+// //TableList 
+// .el-main.list {
+//   padding: 2rem !important;
+// }
+
+
+.main {
+  position: relative;
+  margin-top: 60px;
+  padding: 2rem;
+  .top {
+    .tit {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #409EFF;
+    }
+    .sub {
+      color: #909399;
+      margin: 1rem 0 2rem 0;
     }
   }
   .btnBottom {
-    text-align: center;
     margin-top: 3rem;
+    text-align: center;
   }
-  // .el-table {
-  //   tr {
-  //     background-color: #f4f4f4;
-  //   }
-  // }
+}
+
+.el-table {
+  &__header {
+    th {
+      border-top: 2px solid #EBEEF5;
+      border-bottom: 2px solid #EBEEF5 !important;
+      color: #409EFF;
+    }
+  }
+}
+
+.el-form {
+  margin-right: 1rem;
 }

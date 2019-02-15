@@ -1,11 +1,13 @@
 <template>
   <el-header>
-    <el-dropdown>
-      <i class="el-icon-setting" style="margin-right: 15px"></i>
+    <el-dropdown trigger="click">
+      <span class="userName">
+        {{userName}}<i class="el-icon-setting" style="margin-right: 15px"></i>
+      </span>
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>View</el-dropdown-item>
-        <el-dropdown-item>Add</el-dropdown-item>
-        <el-dropdown-item>Delete</el-dropdown-item>
+        <el-dropdown-item>사용자 정보</el-dropdown-item>
+        <el-dropdown-item>F&Q</el-dropdown-item>
+        <el-dropdown-item>Logout</el-dropdown-item>
       </el-dropdown-menu>
       </el-dropdown>
   </el-header>
@@ -16,5 +18,11 @@ import '@/style/Navigation.scss'
 
 export default {
   name: 'navi',
+  
+  data() {
+    return {
+      userName: 'Goo heeyoung',
+    }
+  },
 }
 </script>

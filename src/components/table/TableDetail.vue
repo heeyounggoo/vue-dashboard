@@ -1,5 +1,10 @@
 <template>
-  <el-main class="detail">
+  <div class="main detail">
+    <div class="top">
+      <h2 class="tit">{{form.title}}</h2>
+      <p class="sub">게시판 상세페이지입니다. 작성한 정보를 확인 또는 수정하세요.</p>
+    </div>
+
     <el-form :ref="form" :model="form" label-width="120px">
       <el-form-item label="제목">
         <el-input v-model="form.title" readonly></el-input>
@@ -19,11 +24,11 @@
     </el-form>
 
     <div class="btnBottom">
-      <el-button type="info" @click="onUpdate">수정</el-button>
-      <el-button type="info" @click="handleDelete">삭제</el-button>
-      <el-button type="info" plain @click="$router.push('/tableList')">목록</el-button>
+      <el-button type="primary" round @click="onUpdate">수정하기</el-button>
+      <el-button type="primary" round @click="handleDelete">삭제하기</el-button>
+      <el-button round @click="$router.push('/tableList')">목록으로</el-button>
     </div>
-  </el-main>
+  </div>
 </template>
 
 <script>
