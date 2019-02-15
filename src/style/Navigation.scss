@@ -1,0 +1,17 @@
+//SideNavi
+.el-aside {
+  height: 100vh;
+  background: #545c64;
+  text-align: left;
+  .el-menu {
+    border: 0;
+  }
+}
+
+//Navi
+.el-header {
+  line-height: 60px;
+  width: 100%;
+  text-align: right;
+  border-bottom: 1px solid #f4f4f4;
+}

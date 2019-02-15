@@ -1,23 +1,25 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <el-container>
+      <side-navi></side-navi>
+      <el-container>
+        <navi></navi>
+        <router-view/>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
 <script>
+import Navi from '@/components/Navigation.vue'
+import SideNavi from '@/components/SideNavi.vue'
+import '@/style/App.scss'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Navi,
+    SideNavi,
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

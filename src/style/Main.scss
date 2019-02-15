@@ -1,0 +1,22 @@
+//Table
+.el-main {
+  position: fixed;
+  top: 60px;
+  width: calc(100% - 200px);
+  .el-form {
+    margin-top: 2rem;
+    margin-right: 2rem;
+    .line {
+      text-align: center;
+    }
+  }
+  .btnBottom {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  // .el-table {
+  //   tr {
+  //     background-color: #f4f4f4;
+  //   }
+  // }
+}
