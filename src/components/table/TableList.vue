@@ -4,7 +4,7 @@
       <h2 class="tit">Table</h2>
       <p class="sub">게시판입니다. 등록, 수정, 삭제가 가능합니다.</p>
     </div>
-    <el-table :data="tableData">
+    <el-table :data="tableData" height="500">
       <el-table-column prop="tableNo" label="No" align="center" width="100"></el-table-column>
       <el-table-column prop="title" label="제목" align="left">
         <template slot-scope="scope">
@@ -52,13 +52,13 @@ export default {
 
   methods: {
     onSubmit() {
-      this.$router.push('/tableRegister')
+      this.$router.push({name: 'TableRegister'})
     },
 
     onDetail(no) {
       console.log('no = ', no)
       this.$router.push({
-        path: '/tableDetail',
+        name: 'TableDetail',
         query: {no:no}
       })
     },

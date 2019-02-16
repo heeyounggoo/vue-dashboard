@@ -1,38 +1,4 @@
-// //Table Common
-// .el-main {
-//   position: fixed;
-//   top: 60px;
-//   width: calc(100% - 200px);
-//   .top {
-//     margin-bottom: 2rem;
-//     .tit {
-//       font-size: 2rem;
-//       color: #409EFF;
-//       margin-bottom: 1rem;
-//     }
-//     .sub {
-//       color: #909399;
-//     }
-//   }
-//   .el-form {
-//     margin-top: 2rem;
-//     margin-right: 2rem;
-//     .line {
-//       text-align: center;
-//     }
-//   }
-//   .btnBottom {
-//     text-align: center;
-//     margin-top: 3rem;
-//   }
-// }
-
-// //TableList 
-// .el-main.list {
-//   padding: 2rem !important;
-// }
-
-
+//common
 .main {
   position: relative;
   margin-top: 60px;
@@ -54,6 +20,7 @@
   }
 }
 
+//table
 .el-table {
   &__header {
     th {
@@ -62,8 +29,16 @@
       color: #409EFF;
     }
   }
+  &::before {
+    height: 2px !important;
+  }
 }
-
+//form
 .el-form {
   margin-right: 1rem;
+}
+
+//select-box 
+.el-select-dropdown {
+  top: 240px !important;
 }

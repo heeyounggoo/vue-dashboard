@@ -108,7 +108,7 @@ export default {
       })
         .then(res => {
           console.log('res = ', res);
-          if(res.data.ok) this.$router.push('/tableList')
+          if(res.data.ok) this.$router.push({name: 'TableList'})
         })
         .catch(err => {
           console.log(err)
@@ -127,7 +127,7 @@ export default {
       })
        .then(res => {
          console.log('res = ', res)
-         if(res.data.ok) this.$router.push('/tableList')
+         if(res.data.ok) this.$router.push({name: 'TableList'})
        })
        .catch(err => {
          console.log(err)
@@ -146,7 +146,7 @@ export default {
         type: 'warning'
       })
         .then(() => {
-          this.$router.push('./tableList')
+          this.$router.push({name: 'TableList'})
         })
         .catch((err) => {
           this.$message({

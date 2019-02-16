@@ -12,7 +12,7 @@
       <el-form-item label="구분">
         <el-input v-model="form.type" readonly></el-input>
       </el-form-item>
-      <el-form-item label="체브박스">
+      <el-form-item label="체크박스">
         <el-input v-model="form.checkbox" readonly></el-input>
       </el-form-item>
       <el-form-item label="라디오 버튼">
@@ -26,7 +26,7 @@
     <div class="btnBottom">
       <el-button type="primary" round @click="onUpdate">수정하기</el-button>
       <el-button type="primary" round @click="handleDelete">삭제하기</el-button>
-      <el-button round @click="$router.push('/tableList')">목록으로</el-button>
+      <el-button round @click="$router.push({name: 'TableList'})">목록으로</el-button>
     </div>
   </div>
 </template>
@@ -66,7 +66,7 @@ export default {
   methods: {
     onUpdate() {
       this.$router.push({
-        path: '/tableRegister',
+        name: 'TableRegister',
         query: {no:this.no}
       })
     },
@@ -79,7 +79,6 @@ export default {
         type: 'warning'
       })
         .then(() => {
-          // this.$router.push('./tableList')
           this.onDelete()
           this.$message({
             type: 'info',
@@ -102,7 +101,7 @@ export default {
       })
         .then(res => {
           console.log('res = ', res);
-          if(res.data.ok) this.$router.push('/tableList')
+          if(res.data.ok) this.$router.push({name: 'TableList',})
         })
         .catch(err => {
           console.log(err)
