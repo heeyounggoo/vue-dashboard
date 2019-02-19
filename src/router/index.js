@@ -1,9 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Layout from '@/components/Layout.vue'
 
 Vue.use(Router)
 
 const routes = [
+  {
+    path: '/login',
+    component: () => import('@/components/login/index.vue')
+  },
   {
     path: '/',
     component: Layout,
@@ -20,7 +25,7 @@ const routes = [
     component: Layout,
     children: [
       {
-        path: 'lsit',
+        path: 'list',
         name: 'TableList',
         component: () => import('@/components/table/TableList.vue')
       },

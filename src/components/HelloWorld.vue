@@ -1,17 +1,19 @@
 <template>
   <div class="hello">
-    
+    <div class="main">
+      <div class="top">
+        <h2 class="tit">Welcome to my Dashboard!</h2>
+        <p class="sub">안녕하세요. 대시보드입니다.</p>
+    </div>
+    </div>
   </div>
 </template>
 
 <script>
+import '@/style/Main.scss'
+
 export default {
   name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
 }
 </script>
 

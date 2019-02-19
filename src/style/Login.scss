@@ -1,0 +1,35 @@
+.login-container {
+  display: flex;
+  align-items: center; 
+  width: 100%;
+  min-height: 100vh;
+  background:#409eff;
+  text-align: center;
+  overflow: hidden;
+  .wrap {
+    position: relative;
+    background: #fff;
+    padding: 3rem;    
+    border-radius: 10px;
+    box-shadow:  4px 4px 9px 1px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+    .el-form {
+      width: 17rem;
+      margin: 0 auto;
+      h2 {
+        color: #409eff;
+        font-size: 2rem;
+        margin-bottom: 2rem; 
+      }
+      .el-input {
+        &__inner {
+          height: 60px;
+          line-height: 60px;
+        }
+      }
+      .el-button {
+        width: 17rem;
+      }
+    }
+  }
+}

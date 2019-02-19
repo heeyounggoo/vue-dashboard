@@ -31,7 +31,7 @@ export default {
 
   methods: {
     linkToHome() {
-      this.$router.push('/tableList')
+      this.$router.push({path: '/table/list'})
     }
   },
 }
