@@ -10,8 +10,7 @@
       </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>사용자 정보</el-dropdown-item>
-        <el-dropdown-item>F&Q</el-dropdown-item>
-        <el-dropdown-item>Logout</el-dropdown-item>
+        <el-dropdown-item @click.native="handleLogout">Logout</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </el-header>
@@ -19,6 +18,7 @@
 
 <script>
 import '@/style/Navigation.scss'
+import Cookies from 'js-cookie'
 
 export default {
   name: 'navi',
@@ -30,9 +30,16 @@ export default {
   },
 
   methods: {
+
     linkToHome() {
-      this.$router.push({path: '/table/list'})
-    }
+      this.$router.push({path: '/'})
+    }, 
+
+    handleLogout() {
+      // console.log(true)
+      Cookies.remove('token')
+      location.reload()
+    },
   },
 }
 </script>

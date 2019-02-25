@@ -41,6 +41,33 @@ const routes = [
       },
     ]
   },
+  {
+    path: '/popup',
+    component: Layout,
+    children: [
+      {
+        path: 'register',
+        name: 'PopupRegister',
+        component: () => import('@/components/popup/PopupRegister.vue')
+      },
+      {
+        path: 'modal',
+        name: 'PopupModal',
+        component: () => import('@/components/popup/PopupModal.vue')
+      },
+    ]
+  },
+  {
+    path: '/me',
+    component: Layout,
+    children: [
+      {
+        path: '/status',
+        name: 'MeStatus',
+        component: () => import('@/components/me/MeStatus.vue')
+      },
+    ]
+  },
 ]
 
 export default new Router({

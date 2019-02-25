@@ -14,17 +14,17 @@ Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
 
 router.beforeEach((to, from, next) => {
-  console.log('===== to =====')
-  console.log(to)
-  console.log('===== to =====')
+  // console.log('===== to =====')
+  // console.log(to)
+  // console.log('===== to =====')
 
-  console.log('===== from =====')
-  console.log(from)
-  console.log('===== from =====')
+  // console.log('===== from =====')
+  // console.log(from)
+  // console.log('===== from =====')
 
-  console.log(Cookies.get('token'))
+  // console.log(Cookies.get('token'))
   
-  if(Cookies.get('token')) {
+  if(Cookies.get('token')) { //로그인 되어있는지 
     if(to.path === '/login') {
       next('/')
     } else {

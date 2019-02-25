@@ -18,7 +18,7 @@ const user = {
 
     SET_LOGIN: (state, loading) => {
       state.loading = false
-    }
+    },
   },
 
   actions: {
@@ -38,10 +38,10 @@ const user = {
         .catch(err => {
           alert('로그인 정보가 일치하지 않습니다.')
         })
-        .finally(err => {
+        .finally(() => {
           commit('SET_LOGIN', false)
         })
-    }
+    },
   }
 }
 

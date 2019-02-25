@@ -26,6 +26,8 @@
             :loading="loading" 
             @click.native.prevent="handleLogin">로그인</el-button>
         </el-form-item>
+        <p class="signIn">ID: admin PW:admin</p>
+        <!-- <p class="signIn"><router-link to="/sign">회원가입 하러가기</router-link></p> -->
       </el-form>
     </div>
   </div>
@@ -36,6 +38,7 @@ import '@/style/Login.scss'
 import {mapActions, mapState} from 'vuex'
 
 export default {
+  name: 'Login',
   data() {
     const validateUsername = (rule, value, callback) => {
       if(!value.length) {
@@ -105,8 +108,12 @@ export default {
       })
     },
 
+    // linkToSign() {
+    //   this.$router.push({path: '/sign'})
+    // },
+
     ...mapActions([
-      'Login'
+      'Login',
     ]),
   }
 }
