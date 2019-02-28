@@ -29,8 +29,9 @@
 
 <script>
 import '@/style/Main.scss'
-import axios from 'axios'
+// import axios from 'axios'
 import camelCase from 'camelcase-keys'
+import { noticeList } from '@/api/app'
 
 export default {
   data() {
@@ -48,7 +49,7 @@ export default {
 
   methods: {
     onList() {
-      axios.get('http://localhost:3000/table/list')
+      noticeList()
         .then(res => {
           const data = camelCase(res.data.body)
           // console.log('res = ', res)

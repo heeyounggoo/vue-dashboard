@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import { userLogin } from '@/api/app'
 
 Vue.use(Vuex)
 
@@ -24,8 +25,8 @@ const user = {
   actions: {
     //비동기 로직
     Login({commit}, userInfo) {
-      axios.post('http://localhost:3000/login', {
-        data: userInfo
+      userLogin({
+        userInfo
       })
         .then(res => {
           console.log('==== res ====')

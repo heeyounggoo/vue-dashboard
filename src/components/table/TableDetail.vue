@@ -33,8 +33,8 @@
 
 <script>
 import '@/style/Main.scss'
-import axios from 'axios'
 import camelCase from 'camelcase-keys'
+import { noticeDetail, noticeDelete } from '@/api/app'
 
 export default {
   data() {
@@ -47,7 +47,7 @@ export default {
   created() {
     console.log('no = ', this.$route.query.no)
 
-    axios.get(`http://localhost:3000/table/detail/${this.no}`)
+    noticeDetail(this.no)
       .then(res => {
         console.log('res = ', res.data.body)
         const data = camelCase(res.data.body)
@@ -94,10 +94,8 @@ export default {
     },
 
     onDelete() {
-      axios({
-        method: 'POST',
-        url: 'http://localhost:3000/table/delete',
-        data: {no: this.no}
+      noticeDelete({
+        no: this.no
       })
         .then(res => {
           console.log('res = ', res);

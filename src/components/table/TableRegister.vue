@@ -50,6 +50,7 @@
 import '@/style/Main.scss'
 import axios from 'axios'
 import camelCase from 'camelcase-keys'
+import { noticeRegister, noticeDetail, noticeModify } from '@/api/app'
 
 export default {
   data() {
@@ -70,7 +71,7 @@ export default {
     if(this.no) {
       this.modifyYn = true
 
-      axios.get(`http://localhost:3000/table/detail/${this.no}`)
+      noticeDetail(this.no)
         .then(res => {
           console.log('res = ', res)
           const data = camelCase(res.data.body)
@@ -101,10 +102,8 @@ export default {
     onSubmit() {
       console.log(this.form)
 
-      axios({
-        method: 'POST',
-        url: 'http://localhost:3000/table/register',
-        data: {form: this.form}
+      noticeRegister({
+        form: this.form
       })
         .then(res => {
           console.log('res = ', res);
@@ -120,10 +119,9 @@ export default {
     },
 
     onModify() {
-      axios({
-        method: 'POST',
-        url: 'http://localhost:3000/table/modify',
-        data: {form: this.form, no: this.no}
+      noticeModify({
+        form: this.form,
+        no: this.no
       })
        .then(res => {
          console.log('res = ', res)
