@@ -13,7 +13,7 @@
         <el-input v-model="form.title"></el-input>
       </el-form-item>
       <el-form-item label="구분">
-        <el-select v-model="form.type" placeholder="선택해주세요">
+        <el-select v-model="form.type" placeholder="선택해주세요" popper-class="register">
           <el-option label="A type" value="A"></el-option>
           <el-option label="B type" value="B"></el-option>
           <el-option label="C type" value="C"></el-option>
@@ -165,7 +165,10 @@ export default {
       noticeModify(formData)
        .then(res => {
          console.log('res = ', res)
-         if(res.data.ok) this.$router.push({name: 'TableList'})
+         if(res.data.ok) this.$router.push({
+           name: 'TableDetail',
+           query: {no: this.no}
+         })
        })
        .catch(err => {
          console.log(err)
