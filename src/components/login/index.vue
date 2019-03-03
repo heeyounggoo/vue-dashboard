@@ -1,8 +1,8 @@
 <template>
-  <div class="login-container">
+  <div class="login-container login">
     <div class="wrap">
+      <h2>LOGIN</h2>
       <el-form ref="loginForm" :model="loginForm" :rules="loginRules" auto-complete="on">
-        <h2>LOGIN</h2>
         <el-form-item prop="username">
           <el-input 
             v-model="loginForm.username" 
@@ -27,7 +27,10 @@
             @click.native.prevent="handleLogin">로그인</el-button>
         </el-form-item>
         <p class="signIn">ID: admin PW:admin</p>
-        <!-- <p class="signIn"><router-link to="/sign">회원가입 하러가기</router-link></p> -->
+        <div class="signIn">
+          <p><router-link to="/sign">회원가입 하러가기</router-link></p>
+          <p><router-link to="/">회원가입 없이 사용하기</router-link></p>
+        </div>
       </el-form>
     </div>
   </div>

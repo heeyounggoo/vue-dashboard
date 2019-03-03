@@ -59,3 +59,7 @@ export const noticeModify = (data) => {
   //   data
   // })
 }
+
+export const signIn = (data) => {
+  return service.post('/login/sign', data)
+}

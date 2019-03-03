@@ -55,7 +55,7 @@ export default {
       .then(res => {
         // console.log('res = ', res.data.body)
         const data = camelCase(res.data.body)
-        console.log('data = ', data)
+        // console.log('data = ', data)
 
         this.form = data
 
@@ -105,7 +105,7 @@ export default {
         form: this.form
       })
         .then(res => {
-          console.log('res = ', res);
+          // console.log('res = ', res);
           if(res.data.ok) this.$router.push({name: 'TableList',})
         })
         .catch(err => {

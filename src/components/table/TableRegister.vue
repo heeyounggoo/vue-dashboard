@@ -90,7 +90,7 @@ export default {
 
       noticeDetail(this.no)
         .then(res => {
-          console.log('res = ', res)
+          // console.log('res = ', res)
           const data = camelCase(res.data.body)
           
           this.form.title = data.title
@@ -109,11 +109,11 @@ export default {
           this.form.phyImgName = data.phyImgName
           this.form.oriImgName = data.oriImgName
 
-          console.log(data.checkbox)
+          // console.log(data.checkbox)
 
           if(data.checkbox !== '') {
             this.form.checkbox = data.checkbox.split(',')
-            console.log(this.form.checkbox)
+            // console.log(this.form.checkbox)
           }
         })
         .catch(err => {
@@ -139,7 +139,7 @@ export default {
 
       noticeRegister(formData)
         .then(res => {
-          console.log('res = ', res);
+          // console.log('res = ', res);
           if(res.data.ok) this.$router.push({name: 'TableList'})
         })
         .catch(err => {
@@ -164,7 +164,7 @@ export default {
 
       noticeModify(formData)
        .then(res => {
-         console.log('res = ', res)
+        //  console.log('res = ', res)
          if(res.data.ok) this.$router.push({
            name: 'TableDetail',
            query: {no: this.no}
@@ -198,18 +198,18 @@ export default {
     },
 
     onImgRemove(file) {
-      console.log('==== onImgRemove ====')
-      console.log(file)
-      console.log('==== onImgRemove ====')
+      // console.log('==== onImgRemove ====')
+      // console.log(file)
+      // console.log('==== onImgRemove ====')
 
       this.imgFile = ''
       this.form.oriImgName = ''
     },
 
     onImgChange(file) {
-      console.log('==== onImgChange ====')
-      console.log(file)
-      console.log('==== onImgChange ====')
+      // console.log('==== onImgChange ====')
+      // console.log(file)
+      // console.log('==== onImgChange ====')
 
       let fileName = file.name
       let lasDot = fileName.lastIndexOf('.')

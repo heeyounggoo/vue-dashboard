@@ -10,6 +10,10 @@ const routes = [
     component: () => import('@/components/login/index.vue')
   },
   {
+    path: '/sign',
+    component: () => import('@/components/login/Sign.vue')
+  },
+  {
     path: '/',
     component: Layout,
     redirect: '/helloWorld',

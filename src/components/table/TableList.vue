@@ -112,7 +112,7 @@ export default {
     },
 
     onDetail(no) {
-      console.log('no = ', no)
+      // console.log('no = ', no)
       this.$router.push({
         name: 'TableDetail',
         query: {no:no}

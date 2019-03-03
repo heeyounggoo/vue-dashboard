@@ -5,13 +5,15 @@
       <span class="round">v.1.0</span>
     </div>
     <el-dropdown trigger="click">
-      <span class="userName">
+      <!-- <span class="userName">
         {{userName}}<i class="el-icon-setting" style="margin-right: 15px"></i>
-      </span>
+      </span> -->
+      <i class="el-icon-setting" style="margin-right: 15px"></i>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>사용자 정보</el-dropdown-item>
         <el-dropdown-item v-if="!isLogin" @click.native="handleLogout">Login</el-dropdown-item>
         <el-dropdown-item v-else @click.native="handleLogout">Logout</el-dropdown-item>
+        <el-dropdown-item v-if="!isLogin" @click="$router.push('/sign')">Join</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </el-header>

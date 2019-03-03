@@ -1,3 +1,4 @@
+//common
 .login-container {
   display: flex;
   align-items: center; 
@@ -13,28 +14,51 @@
     border-radius: 10px;
     box-shadow:  4px 4px 9px 1px rgba(0, 0, 0, 0.08);
     margin: 0 auto;
-    .el-form {
-      width: 17rem;
-      margin: 0 auto;
-      h2 {
-        color: #409eff;
-        font-size: 2rem;
-        margin-bottom: 2rem; 
-      }
-      .el-input {
-        &__inner {
-          height: 60px;
-          line-height: 60px;
-        }
-      }
-      .el-button {
-        width: 17rem;
-      }
-      .signIn {
-        color: #666666;
-        font-weight: bold;
-        font-size: 0.8rem;
+    h2 {
+      color: #409eff;
+      font-size: 2rem;
+      // margin-bottom: 2rem; 
+    }
+  }
+}
+
+//login
+.login {
+  .el-form {
+    width: 17rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+    .el-input {
+      &__inner {
+        height: 60px;
+        line-height: 60px;
       }
     }
+    .el-button {
+      width: 17rem;
+    }
+  }
+  .signIn {
+    p {
+      font-weight: bold;
+      font-size: 0.8rem;
+      padding-top: 10px;
+      a {
+        color: #909399;
+      }
+    }
+  }
+}
+
+//sign
+.sign {
+  p {
+    color: #909399;
+    margin-top: 1rem;
+  }
+  .el-form {
+    width: 25rem;
+    margin: 0 auto;
+    padding-top: 2rem;
   }
 }
