@@ -8,36 +8,36 @@ import store from './store/user'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 import 'element-ui/lib/theme-chalk/index.css'
-import Cookies from 'js-cookie'
+// import Cookies from 'js-cookie'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, { locale })
 
-router.beforeEach((to, from, next) => {
-  // console.log('===== to =====')
-  // console.log(to)
-  // console.log('===== to =====')
+// router.beforeEach((to, from, next) => {
+//   console.log('===== to =====')
+//   console.log(to)
+//   console.log('===== to =====')
 
-  // console.log('===== from =====')
-  // console.log(from)
-  // console.log('===== from =====')
+//   console.log('===== from =====')
+//   console.log(from)
+//   console.log('===== from =====')
 
-  // console.log(Cookies.get('token'))
+//   console.log(Cookies.get('token'))
   
-  if(Cookies.get('token')) { //로그인 되어있는지 
-    if(to.path === '/login') {
-      next('/')
-    } else {
-      next()
-    }
-  } else {
-    if(to.path === '/login') {
-      next()
-    } else {
-      next('/login')
-    }
-  }
-})
+//   if(Cookies.get('token')) { //로그인 되어있는지 
+//     if(to.path === '/login') {
+//       next('/')
+//     } else {
+//       next()
+//     }
+//   } else {
+//     if(to.path === '/login') {
+//       next()
+//     } else {
+//       next('/login')
+//     }
+//   }
+// })
 
 /* eslint-disable no-new */
 new Vue({

@@ -3,7 +3,10 @@
     <div class="main">
       <div class="top">
         <h2 class="tit">Welcome to my Dashboard!</h2>
-        <p class="sub">안녕하세요. 대시보드입니다.</p>
+        <div class="sub">
+          <p>안녕하세요. 게시판 포트폴리오입니다.</p>
+          <p>간한단 로그인, 로그아웃, 회원가입과 게시판기능을 구현했으니 확인부탁드릴게요!</p>
+        </div>
     </div>
     </div>
   </div>

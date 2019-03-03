@@ -36,6 +36,21 @@
       <el-form-item label="내용">
         <el-input type="textarea" v-model="form.conts"></el-input>
       </el-form-item>
+      <el-form-item label="이미지등록">
+        <el-upload 
+          class="upload-demo"
+          action=""
+          name="file"
+          :multiple="false"
+          :on-remove="onImgRemove"
+          :on-change="onImgChange"
+          :auto-upload="false"
+          :limit="1"
+          :file-list="fileList"
+          list-type="picture">
+          <el-button size="small" type="info">파일업로드</el-button>
+        </el-upload>
+      </el-form-item>
     </el-form>
 
     <div class="btnBottom">
@@ -63,7 +78,9 @@ export default {
         conts: ''
       },
       no: this.$route.query.no,
-      modifyYn : false
+      modifyYn : false,
+      fileList: [],
+      imgFile: '',
     }
   },
 
@@ -81,6 +98,16 @@ export default {
           this.form.checkbox = data.checkbox
           this.form.radio = data.radio
           this.form.conts = data.conts
+
+          if(data.phyImgName) {
+            this.fileList = [{
+              name: data.oriImgName,
+              url: `http://localhost:3000/images/${data.phyImgName}`
+            }]
+          }
+
+          this.form.phyImgName = data.phyImgName
+          this.form.oriImgName = data.oriImgName
 
           console.log(data.checkbox)
 
@@ -100,11 +127,17 @@ export default {
 
   methods: {
     onSubmit() {
-      console.log(this.form)
+      // console.log(this.form)
+      // console.log('file = ', this.imgFile)
 
-      noticeRegister({
-        form: this.form
-      })
+      const formData = new FormData()
+
+      formData.append('form', JSON.stringify(this.form))
+      if(this.imgFile) {
+        formData.append('image', this.imgFile.raw)
+      }
+
+      noticeRegister(formData)
         .then(res => {
           console.log('res = ', res);
           if(res.data.ok) this.$router.push({name: 'TableList'})
@@ -119,10 +152,17 @@ export default {
     },
 
     onModify() {
-      noticeModify({
-        form: this.form,
-        no: this.no
-      })
+      const formData = new FormData()
+
+      formData.append('form', JSON.stringify(this.form))
+      formData.append('no', this.no)
+
+      if(this.imgFile) {
+        formData.append('image', this.imgFile.raw)
+      }
+
+
+      noticeModify(formData)
        .then(res => {
          console.log('res = ', res)
          if(res.data.ok) this.$router.push({name: 'TableList'})
@@ -152,6 +192,34 @@ export default {
             message: '취소되었습니다'
           })
         })
+    },
+
+    onImgRemove(file) {
+      console.log('==== onImgRemove ====')
+      console.log(file)
+      console.log('==== onImgRemove ====')
+
+      this.imgFile = ''
+      this.form.oriImgName = ''
+    },
+
+    onImgChange(file) {
+      console.log('==== onImgChange ====')
+      console.log(file)
+      console.log('==== onImgChange ====')
+
+      let fileName = file.name
+      let lasDot = fileName.lastIndexOf('.')
+      let fileExt = fileName.substring(lasDot).toLowerCase()
+
+      // console.log(fileName, lasDot, fileExt)
+
+      if(fileExt !== '.jpg' && fileExt !== '.png' && fileExt !== '.jpeg') {
+        alert('JPG, PNG 파일만 업로드 가능합니다')
+        this.fileList = []
+      } else {
+        this.imgFile = file
+      }
     },
   },
 }

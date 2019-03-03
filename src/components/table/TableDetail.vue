@@ -21,6 +21,9 @@
       <el-form-item label="내용">
         <el-input v-model="form.conts" readonly></el-input>
       </el-form-item>
+      <el-form-item label="이미지">
+        <img :src="imgFile" alt="">
+      </el-form-item>
     </el-form>
 
     <div class="btnBottom">
@@ -41,19 +44,22 @@ export default {
     return {
       form: {},
       no: this.$route.query.no,
+      imgFile: ''
     }
   },
 
   created() {
-    console.log('no = ', this.$route.query.no)
+    // console.log('no = ', this.$route.query.no)
 
     noticeDetail(this.no)
       .then(res => {
-        console.log('res = ', res.data.body)
+        // console.log('res = ', res.data.body)
         const data = camelCase(res.data.body)
         console.log('data = ', data)
 
         this.form = data
+
+        if(data.phyImgName) this.imgFile = `http://localhost:3000/images/${data.phyImgName}`
       })
       .catch(err => {
         console.log(err)
@@ -95,7 +101,8 @@ export default {
 
     onDelete() {
       noticeDelete({
-        no: this.no
+        no: this.no,
+        form: this.form
       })
         .then(res => {
           console.log('res = ', res);

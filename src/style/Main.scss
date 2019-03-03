@@ -43,6 +43,13 @@
 //form
 .el-form {
   margin-right: 1rem;
+  .el-form-item {
+    &__content {
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 //select-box 

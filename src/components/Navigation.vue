@@ -10,7 +10,8 @@
       </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>사용자 정보</el-dropdown-item>
-        <el-dropdown-item @click.native="handleLogout">Logout</el-dropdown-item>
+        <el-dropdown-item v-if="!isLogin" @click.native="handleLogout">Login</el-dropdown-item>
+        <el-dropdown-item v-else @click.native="handleLogout">Logout</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </el-header>
@@ -26,6 +27,7 @@ export default {
   data() {
     return {
       userName: 'Goo heeyoung',
+      isLogin: Cookies.get('token')
     }
   },
 

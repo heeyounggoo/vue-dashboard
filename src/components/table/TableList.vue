@@ -31,6 +31,7 @@
 import '@/style/Main.scss'
 // import axios from 'axios'
 import camelCase from 'camelcase-keys'
+import Cookies from 'js-cookie'
 import { noticeList } from '@/api/app'
 
 export default {
@@ -88,5 +89,21 @@ export default {
       this.onList()
     },
   },
+
+  beforeRouteEnter (to, from, next) {
+    if(Cookies.get('token')) { //로그인 되어있는지 
+      if(to.path === '/login') {
+        next('/')
+      } else {
+        next()
+      }
+    } else {
+      if(to.path === '/login') {
+        next()
+      } else {
+        next('/login')
+      }
+    }
+  }
 }
 </script>
