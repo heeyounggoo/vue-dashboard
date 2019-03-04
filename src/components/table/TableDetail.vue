@@ -58,8 +58,10 @@ export default {
         // console.log('data = ', data)
 
         this.form = data
+        console.log()
 
-        if(data.phyImgName) this.imgFile = `http://localhost:3000/images/${data.phyImgName}`
+        // if(data.phyImgName) this.imgFile = `http://localhost:3000/images/${data.phyImgName}`
+        if(data.phyImgName) this.imgFile = `http://54.180.194.30:3000/images/${data.phyImgName}`
       })
       .catch(err => {
         console.log(err)

@@ -59,8 +59,8 @@
     </el-form>
 
     <div class="btnBottom">
-      <el-button type="primary" round  v-if="!modifyYn" @click="onSubmit('form')">등록하기</el-button>
-      <el-button type="primary" round  v-else @click="onUpdate('form')">수정하기</el-button>
+      <!-- <el-button type="primary" round  v-if="!modifyYn" @click="onSubmit('form')">등록하기</el-button> -->
+      <!-- <el-button type="primary" round  v-else @click="onUpdate('form')">수정하기</el-button> -->
       <el-button type="primary" round @click="showModal = true">팝업보기</el-button>
       <el-button round plain @click="onCancel">취소하기</el-button>
     </div>
@@ -111,19 +111,24 @@
     },
     
     methods: {
-   
-      onSubmit() {
-       
-      },
-    
-      // 글 수정
-      onUpdate() {
-        
-      },
 
       // 글 등록 취소
       onCancel() {
-        
+      this.$confirm('팝업을 취소하시겠습니까?', {
+        confirmButtonText: 'OK',
+        cancelButtonText: 'Cancel',
+        center: true,
+        type: 'warning'
+      })
+        .then(() => {
+          this.$router.push('/')
+        })
+        .catch((err) => {
+          this.$message({
+            type: 'info',
+            message: '취소되었습니다'
+          })
+        })
       },
 
       // 이미지 삭제
