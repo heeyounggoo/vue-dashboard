@@ -6,9 +6,9 @@
 서버 작업은 [여기서](https://github.com/heeyounggoo/vue-dashboard-node) 확인 가능합니다.
 
 ## 프로젝트 설명
-* [[작업방식]]
-* [[로그인,회원가입]]
-* [[게시판]]
+* [작업방식](https://github.com/heeyounggoo/vue-dashboard#%EC%9E%91%EC%97%85%EB%B0%A9%EC%8B%9D)
+* [로그인,회원가입](https://github.com/heeyounggoo/vue-dashboard#%EB%A1%9C%EA%B7%B8%EC%9D%B8%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85)
+* [게시판](https://github.com/heeyounggoo/vue-dashboard#%EA%B2%8C%EC%8B%9C%ED%8C%90)
 
 
 ## 작업방식
