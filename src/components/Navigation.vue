@@ -11,9 +11,9 @@
       <i class="el-icon-setting" style="margin-right: 15px"></i>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>사용자 정보</el-dropdown-item>
-        <el-dropdown-item v-if="!isLogin" @click.native="handleLogout">Login</el-dropdown-item>
+        <el-dropdown-item v-if="!isLogin" @click.native="$router.push('/login')">Login</el-dropdown-item>
         <el-dropdown-item v-else @click.native="handleLogout">Logout</el-dropdown-item>
-        <el-dropdown-item v-if="!isLogin" @click="$router.push('/sign')">Join</el-dropdown-item>
+        <el-dropdown-item v-if="!isLogin" @click.native="$router.push('/sign')">Join</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </el-header>
