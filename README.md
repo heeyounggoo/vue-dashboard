@@ -4,6 +4,7 @@
 기본적인 로그인과 로그아웃 그리고 게시판 기능을 구현해놨습니다.
 화면은 Vue.js를 통해 작업했고 서버는 Node.js 프레임워크인 Express.js를 통해 작업했습니다.
 서버 작업은 [여기서](https://github.com/heeyounggoo/vue-dashboard-node) 확인 가능합니다.
+[데모사이트](http://54.180.194.30:3000/#/)
 
 ## 프로젝트 설명
 * [작업방식](https://github.com/heeyounggoo/vue-dashboard#%EC%9E%91%EC%97%85%EB%B0%A9%EC%8B%9D)
